@@ -11,18 +11,18 @@ It is fairly common in our team to focus on an individual test or describe in or
 
 ### How to use?
 ```
-npm install --save-dev tslint-jasmine-noSkipOrFocus
+npm install --save-dev tslint-jasmine-no-skip-or-focus
 ```
 or add
 ```
-"tslint-jasmine-noSkipOrFocus": "1.0.2"
+"tslint-jasmine-no-skip-or-focus": "1.0.3"
 ```
 to the devDependencies in your package.json.
 
 Add the following to the tsling.config.json:
 ```
 "rulesDirectory": [
-    "node_modules/tslint-jasmine-noSkipOrFocus"
+    "node_modules/tslint-jasmine-no-skip-or-focus"
 ],
 "no-focused-test": true,
 "no-skipped-test": true,
