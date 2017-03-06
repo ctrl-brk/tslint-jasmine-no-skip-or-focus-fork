@@ -1,0 +1,59 @@
+{
+  "name": "tslint-jasmine-no-skip-or-focus-fork",
+  "version": "1.0.3",
+  "description": "Linting rules to disallow focused or skipped tests.",
+  "scripts": {
+    "lint": "tslint -c tslint.json src/**/*.ts test/**/*.ts",
+
+    "prerelease": "npm run build && npm run lint && npm run test",
+    "release": "npm publish ./dist",
+
+    "prebuild": "npm run compile",
+    "build": "rimraf ./dist && cp -r ./tmp/src ./dist",
+    "postbuild": "cp README.md dist && cp LICENSE ./dist && cp package.json ./dist",
+
+    "precompile": "rimraf ./tmp",
+    "compile": "tsc",
+
+    "pretest": "npm run compile",
+    "test": "mocha tmp/test/*.js tmp/test/**/*.js",
+    "test:watch": "mocha tmp/test/*.js tmp/test/**/*.js --watch"
+  },
+  "contributors": [
+    "Jamie Morris <jamie@maloric.com>",
+    "Aleksey Grachev <aleksey_grachev@yahoo.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ctrl-brk/tslint-jasmine-no-skip-or-focus-fork.git"
+  },
+  "keywords": [
+    "lint",
+    "tslint",
+    "jasmine"
+  ],
+  "author": {
+    "name": "Jamie Morris",
+    "email": "jamie@maloric.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ctrl-brk/tslint-jasmine-no-skip-or-focus-fork/issues"
+  },
+  "homepage": "https://github.com/ctrl-brk/tslint-jasmine-no-skip-or-focus-fork#readme",
+  "devDependencies": {
+    "@types/chai": "^3.4.35",
+    "@types/mocha": "^2.2.39",
+    "@types/node": "^7.0.5",
+    "chai": "^3.5.0",
+    "mocha": "3.2.0",
+    "tslint": "4.5.1",
+    "typescript": "^2.2.1"
+  },
+  "peerDependencies": {
+    "tslint": "^4.5.1"
+  },
+  "dependencies": {
+    "rimraf": "^2.6.1"
+  }
+}
